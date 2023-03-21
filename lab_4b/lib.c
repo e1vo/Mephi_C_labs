@@ -7,11 +7,7 @@
 void getint(int *a){
     int n=0;
     do
-<<<<<<< HEAD
     { n = scanf("%u", a);
-=======
-    { n = scanf("%d", a);
->>>>>>> e4f708d541828778d840a7981dbc7542dd0ecc34
     if ( n<=0){
         printf("Input error. Try again:");
         scanf("%*[^\n]");
@@ -20,14 +16,6 @@ void getint(int *a){
     scanf("%*c");
 }
 
-<<<<<<< HEAD
-=======
-int max(int a, int b)
-{
-    return (a > b)? a : b;
-}
-
->>>>>>> e4f708d541828778d840a7981dbc7542dd0ecc34
 char *getstr(){
     char* ptr = (char *)calloc(1,1);
     char buf[129];
@@ -56,11 +44,7 @@ char *getstr(){
     return ptr;
 }
 
-<<<<<<< HEAD
 node * createNode(unsigned int key,int * sw) {
-=======
-node * createNode(int key, int * sw) {
->>>>>>> e4f708d541828778d840a7981dbc7542dd0ecc34
     node * tmp = malloc(sizeof(node));
     tmp -> key = key;
     *sw = 1;
@@ -78,11 +62,7 @@ node * createNode(int key, int * sw) {
     return tmp;
 }
 
-<<<<<<< HEAD
 node * search(node *root, unsigned int key) {
-=======
-node * search(node *root, int key) {
->>>>>>> e4f708d541828778d840a7981dbc7542dd0ecc34
     if (root == NULL || root -> key == key) {
         return root;
     }
@@ -92,40 +72,24 @@ node * search(node *root, int key) {
     return search(root -> left, key);
 }
 
-<<<<<<< HEAD
 node *insert_node(node *root, unsigned int key) {  
     int sw, balance;
     if (root == NULL) {
         int sw = 0;
-=======
-node *insert_node(node *root, int key) {  
-    int sw, balance=0;
-    if (root == NULL) {
->>>>>>> e4f708d541828778d840a7981dbc7542dd0ecc34
         return createNode(key, &sw);
     }
 
     if (root -> key > key) {
         root -> left = insert_node(root -> left, key);
-<<<<<<< HEAD
         if (sw > 0) {root -> l_ch += 1;}
-=======
-        root -> l_ch += 1;
->>>>>>> e4f708d541828778d840a7981dbc7542dd0ecc34
         
     }
     else if (root -> key < key) {
         root -> right = insert_node(root -> right, key);
-<<<<<<< HEAD
         if (sw > 0) {root -> r_ch += 1;}
     }
 
     if(sw > 0) {
-=======
-        root -> r_ch += 1;
-    }
-
->>>>>>> e4f708d541828778d840a7981dbc7542dd0ecc34
     balance = root->l_ch - root -> r_ch;
 
     if (balance > N && key < root -> left -> key) {
@@ -143,10 +107,7 @@ node *insert_node(node *root, int key) {
         root -> right = right_rotate(root -> right);
         return left_rotate(root);
     }
-<<<<<<< HEAD
     }
-=======
->>>>>>> e4f708d541828778d840a7981dbc7542dd0ecc34
     return root;   
 }
 
@@ -189,11 +150,7 @@ node *find_min_node(node *root) {
     return current;
 }
 
-<<<<<<< HEAD
 node* delete_node(node* root, unsigned int key)
-=======
-node* delete_node(node* root, int key)
->>>>>>> e4f708d541828778d840a7981dbc7542dd0ecc34
 {
    if (root == NULL) {
        return root;
@@ -263,11 +220,7 @@ node* delete_node(node* root, int key)
     return root;
 }
 
-<<<<<<< HEAD
 node * search_the_biggest(node *root, unsigned int key) {
-=======
-node * search_the_biggest(node *root, int key) {
->>>>>>> e4f708d541828778d840a7981dbc7542dd0ecc34
     while(root -> right != NULL && root -> key < key && root -> right -> key < key) {
         root = root -> right;
     }
@@ -297,13 +250,8 @@ node * file_read(node *root) {
 void inorder(node* root)
 {
     if (root != NULL) {
-<<<<<<< HEAD
         printf("Key: %u\n", root->key);
         //printf("Info: %s\n", root -> info);
-=======
-        printf("Key: %d\n", root->key);
-        printf("Info: %s\n", root -> info);
->>>>>>> e4f708d541828778d840a7981dbc7542dd0ecc34
         printf("Left children: %d\n", root -> l_ch);
         printf("Right children: %d\n", root -> r_ch);    
         printf("-----------------------------------\n");  
@@ -312,7 +260,6 @@ void inorder(node* root)
     }
 }
 
-<<<<<<< HEAD
 int D_timing() {
     node *root = NULL;
     int n=10, key[10000],k,cnt = 1000000, i,m;
@@ -344,18 +291,13 @@ int D_timing() {
     return 1;
 }
 
-=======
->>>>>>> e4f708d541828778d840a7981dbc7542dd0ecc34
 void CreateMenu(int *choice) {    
     printf("Print [1] to insert element into the tree.\n");
     printf("Print [2] to delete element from the tree.\n");
     printf("Print [3] to search for an element from the tree.\n");
     printf("Print [4] to find next value  element from the tree.\n");
     printf("Print [5] if you want to load tree from file ! \n");
-<<<<<<< HEAD
     printf("Print [6] for timings ! \n");
-=======
->>>>>>> e4f708d541828778d840a7981dbc7542dd0ecc34
     printf("Print [8] to print tree.\n");
     printf("Print [9] to quit.\n");
     printf("-----------------------------------\n");
